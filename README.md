@@ -1,48 +1,70 @@
 # Autor Ventura
 
-Super agente escritor do estúdio Gerde. Escreve livros completos, do conceito
-ao arquivo final, com qualidade publicável.
+[![License](https://img.shields.io/github/license/venturalabs-ai/autor-ventura)](LICENSE)
 
-## O que faz
+**Pipeline multiagente para transformar uma ideia em um processo editorial estruturado — pesquisa, arquitetura narrativa, escrita, revisão, formatação e entrega final.**
 
-- Ficção e não ficção: romance, thriller, horror, fantasia, sci-fi, policial,
-  contos e crônicas.
-- Comédia em todos os registros: sátira, humor ácido, politicamente incorreto
-  sob demanda, stand-up e roteiro de humor.
-- Livros técnicos de óleo e gás: upstream, midstream, downstream, engenharia
-  de petróleo, segurança industrial, QSMS, regulatório ANP e meio ambiente.
-- Livros educacionais e didáticos: técnico, acadêmico, EJA, apostilas e
-  material de treinamento corporativo.
-- Escrita nativa nas ~20 línguas mais faladas do mundo.
+> Desenvolvido por **Ventura Labs AI** — Wemerson Mota de Oliveira
 
-## Estrutura
+## Proposta de valor
 
-```
+Em vez de concentrar todo o trabalho em um único prompt, o Autor Ventura divide a produção em especialistas com responsabilidades claras. Isso torna o processo mais rastreável, reutilizável e fácil de revisar.
+
+## Pipeline
+
+**Pesquisa → Arquitetura → Escrita → Humanização → Formatação → Conexão emocional → Revisão final**
+
+## Especialistas
+
+```text
 autor-ventura/
-├── 01-pesquisador.md          # Pesquisador — fontes, dados, vocabulário de domínio
-├── 02-arquiteto-narrativo.md  # Arquiteto Narrativo — estrutura, arco, atos, ritmo
-├── 03-escritor-de-voz.md      # Escritor de Voz — prosa, cenas, diálogos, registros
-├── 04-humanizador.md          # Humanizador PT-BR — remoção de traços de IA (25 padrões)
-├── 05-formatador.md           # Formatador — livro, ABNT, blog, Instagram, LinkedIn, roteiro
-├── 06-conector-emocional.md   # Conector Emocional — gancho visceral, resíduo emocional
-├── 07-revisor-final.md        # Revisor Final — auditoria de continuidade e entrega
+├── 01-pesquisador.md
+├── 02-arquiteto-narrativo.md
+├── 03-escritor-de-voz.md
+├── 04-humanizador.md
+├── 05-formatador.md
+├── 06-conector-emocional.md
+├── 07-revisor-final.md
 └── personas/
-    └── agency-agents-pt-BR/   # Biblioteca de 187 personas PT-BR (referência de voz e função)
+    └── agency-agents-pt-BR/
 ```
 
-## Pipeline de produção
+## Casos de uso
 
-Pesquisa → Arquitetura → Escrita → Humanização → Formatação → Conexão
-emocional → Revisão final.
+- ficção e não ficção;
+- livros técnicos e profissionais;
+- conteúdo educacional e didático;
+- artigos e materiais long-form;
+- roteiros e projetos editoriais;
+- documentação estruturada para múltiplos formatos.
 
-Para capítulos individuais, os especialistas 3–5 são obrigatórios; para livros
-completos, os sete.
+## Como usar
 
-## Política de escrita
+1. Defina objetivo, público, formato e restrições.
+2. Use o pesquisador para levantar contexto e fontes quando necessário.
+3. Passe a estrutura para o arquiteto narrativo.
+4. Execute escrita e revisão em etapas, preservando continuidade.
+5. Finalize com formatação e auditoria do documento.
 
-Liberdade criativa total: voz autoral forte, sem moralismo, sem censura prévia
-e sem avisos de conteúdo para ficção. Recusa apenas conteúdo ilegal ou dano
-real e direcionado a pessoas reais.
+## Princípios
 
-Frase-guia do estúdio: "Todo livro nasce de uma voz; todo capítulo, de uma
-escolha; toda página, de uma obrigação com o leitor."
+- responsabilidades separadas por especialista;
+- continuidade entre etapas;
+- revisão antes da entrega;
+- voz e formato adaptados ao objetivo;
+- conteúdo factual deve ser validado quando depender de fontes externas;
+- nenhum agente substitui revisão humana quando o conteúdo tiver impacto jurídico, médico, financeiro ou regulatório.
+
+## Status
+
+Biblioteca de prompts, regras e personas para workflows editoriais multiagentes. Não é uma aplicação autônoma nem uma garantia automática de qualidade publicável: o resultado depende do modelo, contexto, fontes e processo de revisão utilizados.
+
+## Licença
+
+MIT — consulte [LICENSE](LICENSE).
+
+## Autor
+
+Wemerson Mota de Oliveira — Ventura Labs AI
+
+[GitHub](https://github.com/venturalabs-ai) · [LinkedIn](https://www.linkedin.com/in/wemerson-mota-de-oliveira-81aa8226/)
