@@ -1,6 +1,6 @@
 ---
 name: claim-ledger
-description: Build or review an Autor Ventura Claim Ledger for material verifiable assertions with source date and confidence traceability. Use when journalism academic edital or other evidence-sensitive content contains factual claims. Do not use for purely fictional or subjective material with no factual verification need.
+description: Build or review an Autor Ventura Claim Ledger for material verifiable assertions with source date and confidence traceability. Use when journalism academic edital or other evidence-sensitive content contains factual claims. Do not use when material is purely fictional or subjective and has no factual verification need.
 ---
 
 # Claim ledger
