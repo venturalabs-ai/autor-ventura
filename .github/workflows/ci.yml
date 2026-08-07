@@ -22,7 +22,8 @@ jobs:
         run: |
           test -f PROVENANCE.md
           grep -q 'agency-agents' PROVENANCE.md
-      - name: Run evals
+      - name: Run structural and editorial evals
         run: |
           python scripts/run_evals.py
           python evals/eval_structural.py
+          python -m unittest discover -s editorial-evals -p 'test_*.py' -v
