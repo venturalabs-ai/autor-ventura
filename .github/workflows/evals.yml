@@ -18,5 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run static multi-agent evals
+      - name: Run pipeline and provenance contract evals
         run: python scripts/run_evals.py
+      - name: Run independent structural regression eval
+        run: python evals/eval_structural.py
