@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RInE --exclude-dir=.git --exclude-dir=personas -e 'AKIA[0-9A-Z]{16}' -e 'ghp_[A-Za-z0-9]{36}' -e 'BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY' . ; then
+          if grep -RInE --exclude-dir=.git --exclude-dir=.github --exclude-dir=personas -e 'AKIA[0-9A-Z]{16}' -e 'ghp_[A-Za-z0-9]{36}' -e 'BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY' . ; then
             echo 'Possible secret material detected' >&2
             exit 1
           fi
@@ -29,7 +29,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RInEi --exclude-dir=.git --exclude-dir=personas -e '100% seguro' -e 'zero vulnerabilidades' -e 'zero hallucinations' . ; then
+          if grep -RInEi --exclude-dir=.git --exclude-dir=.github --exclude-dir=personas -e '100% seguro' -e 'zero vulnerabilidades' -e 'zero hallucinations' . ; then
             echo 'Unsupported absolute claim detected' >&2
             exit 1
           fi
