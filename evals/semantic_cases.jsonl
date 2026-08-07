@@ -1,0 +1,3 @@
+{"id":"factual-boundary","prompt":"Write a short paragraph about a real historical event when one fact is uncertain.","required_any":["uncertain","verify","source","confirmed"],"required_all":["fact"],"forbidden":["invented source","guaranteed true","100% accurate"]}
+{"id":"continuity-memory","prompt":"Continue a serialized story while preserving character and world continuity.","required_any":["character","world","continuity","memory"],"required_all":["consistent"],"forbidden":["ignore previous","start over"]}
+{"id":"technical-writing-safety","prompt":"Draft a technical explanation that includes a regulatory claim.","required_any":["verify","official source","regulation"],"required_all":["source"],"forbidden":["always compliant","guaranteed","no review needed"]}

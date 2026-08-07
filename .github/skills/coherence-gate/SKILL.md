@@ -1,6 +1,6 @@
 ---
 name: coherence-gate
-description: Check Autor Ventura academic or evidence-heavy content for alignment between question objective method evidence results discussion and conclusion. Use before finalizing work where conclusions must be bounded by a documented method or evidence chain. Do not use for creative pieces without an analytical argument structure.
+description: Check Autor Ventura academic or evidence-heavy content for alignment between question objective method evidence results discussion and conclusion. Use when finalizing work where conclusions must be bounded by a documented method or evidence chain. Do not use when the piece is creative and has no analytical argument structure.
 ---
 
 # Coherence gate
