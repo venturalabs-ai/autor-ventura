@@ -1,149 +1,234 @@
-# Autor Ventura v2.0
+# Autor Ventura v3.0
 
 [![License](https://img.shields.io/github/license/venturalabs-ai/autor-ventura)](LICENSE)
 
-**Sistema editorial multiagente com memória criativa persistente, validação factual, adaptação por domínio e monitoramento de sinais de mercado.**
+**Sistema editorial multiagente que decide como escrever antes de escrever: quem fala, para quem, por quê, em qual meio, com quais evidências, com qual emoção e dentro de quais limites.**
 
-> Desenvolvido por **Ventura Labs AI** — Wemerson Mota de Oliveira
+> Ventura Labs AI — Wemerson Mota de Oliveira
 
-## O que mudou na v2.0
+## O salto da v3
 
-- memória criativa persistente estruturada por personagens, mundo, enredo, estilo e fatos;
-- protocolo formal para iniciar, continuar e retomar obras após pausas;
-- 10 domínios editoriais cobertos por regras específicas;
-- framework para validação de fatos reais antes da publicação;
-- guia de sinais de mercado para romantasy, thriller, devocional, literatura nacional, mangá e clássicos revividos;
-- utilitário Python para inicializar e validar a memória de uma obra;
-- system prompt consolidado em `prompts/autor-ventura-v2.md`.
+A v2 estruturou memória criativa, continuidade, domínios e validação factual. A v3 adiciona uma camada de **inteligência editorial por contexto de publicação**.
 
-## Pipeline editorial
+O sistema agora separa:
 
-**Pesquisa → Arquitetura → Escrita → Humanização → Formatação → Conexão emocional → Revisão final → Atualização de memória**
+**speaker → audience → purpose → medium → evidence → emotion → limits**
 
-## Especialistas
+antes de selecionar estrutura, voz e critérios de revisão.
+
+## Arquitetura
+
+```text
+PEDIDO
+   ↓
+EDITORIAL ROUTER
+   ↓
+AUDIENCE + PURPOSE MODEL
+   ↓
+PUBLICATION PACK
+   ↓
+RESEARCH / FACT ENGINE
+   ↓
+MEMORY ENGINE
+   ↓
+STRUCTURE ARCHITECT
+   ↓
+DRAFT
+   ↓
+HUMAN VOICE ENGINE
+   ↓
+RESPECT & SENSITIVITY REVIEW
+   ↓
+DOMAIN REVIEW
+   ↓
+FACT / CITATION CHECK
+   ↓
+EDITOR DE VERDADE
+   ↓
+FORMAT VALIDATOR
+   ↓
+FINAL
+```
+
+## Novos módulos v3
 
 ```text
 autor-ventura/
-├── 01-pesquisador.md
-├── 02-arquiteto-narrativo.md
-├── 03-escritor-de-voz.md
-├── 04-humanizador.md
-├── 05-formatador.md
-├── 06-conector-emocional.md
-├── 07-revisor-final.md
+├── publication-packs/
+│   ├── README.md
+│   ├── editais.md
+│   ├── magazine.md
+│   └── symposium.md
+├── voice-engine/
+│   └── README.md
+├── academic/
+│   └── README.md
+├── journalism/
+│   └── README.md
+├── broadcast/
+│   └── README.md
+├── ceremonial/
+│   └── README.md
+├── editorial-evals/
+│   ├── README.md
+│   └── test_editorial_router.py
 ├── prompts/
-│   └── autor-ventura-v2.md
-├── memory/
-│   └── MEMORY_SCHEMA.md
-├── docs/
-│   └── MARKET_SIGNALS.md
-├── scripts/
-│   ├── run_evals.py
-│   └── memory_manager.py
-└── personas/
-    └── agency-agents-pt-BR/
+│   ├── autor-ventura-v2.md
+│   └── autor-ventura-v3.md
+└── scripts/
+    ├── editorial_router.py
+    ├── memory_manager.py
+    └── run_evals.py
 ```
 
-## Memória Criativa Persistente
+## Publication Packs
 
-O Autor Ventura não depende apenas do contexto implícito da IA. A continuidade é tratada como um estado editorial explícito:
+A mesma informação recebe tratamento diferente conforme o meio:
+
+| Meio | Prioridade editorial |
+|---|---|
+| Jornal | lead, 5W1H, atribuição, contexto e Claim Ledger |
+| TV / rádio / vídeo | texto falado, duração, OFF, sonora, passagem e GC |
+| Revista / long-form | cena, nut graf, contexto, profundidade e precisão |
+| Livro | continuidade longa, voz, arco, memória e coerência |
+| Edital | requisito, evidência, documento, resposta e risco |
+| Acadêmico | pergunta, método, evidência, discussão, limitações e integridade |
+| Simpósio | consistência entre abstract, paper, pôster, slides e fala |
+| Cerimonial | memória real, significado, privacidade, autenticidade e promessa |
+
+## Human Voice Engine
+
+Humanização não é esconder o uso de IA. É produzir comunicação natural, específica e respeitosa.
+
+O motor trabalha:
+
+- intenção por parágrafo;
+- ritmo e variação de frase;
+- formalidade adequada ao público;
+- vocabulário preferido;
+- exemplos aprovados e rejeitados;
+- emoção proporcional ao contexto;
+- redução de clichês, redundâncias e transições automáticas;
+- respeito, privacidade e ausência de memórias inventadas sobre pessoas reais.
+
+## Memória de voz
+
+Além da memória criativa v2, a v3 prevê:
 
 ```text
-MEMORIA_ATIVA/
-├── personagens/
-├── mundo/
-├── enredo/
-├── estilo/
-└── fatos/
+voice_memory/
+├── author_profile.json
+├── audience_profile.json
+├── preferred_vocabulary.json
+├── avoid_list.json
+├── formality.json
+├── approved_samples/
+├── rejected_samples/
+├── rhythm.json
+└── revision_history.json
 ```
 
-O esquema completo está em [`memory/MEMORY_SCHEMA.md`](memory/MEMORY_SCHEMA.md).
-
-### Inicializar memória de uma nova obra
+## Roteador editorial executável
 
 ```bash
-python scripts/memory_manager.py init memoria/minha-obra \
-  --title "Minha obra" \
-  --genre "thriller psicológico" \
-  --audience "adulto" \
-  --target-length "80.000 palavras"
+python scripts/editorial_router.py \
+  --speaker "repórter" \
+  --audience "público geral" \
+  --purpose "informar" \
+  --medium "jornal" \
+  --limit "não publicar nomes de menores"
 ```
 
-### Validar a estrutura
+O retorno informa pack, nível de evidência, emoção e verificações obrigatórias.
+
+## Jornalismo
+
+O Journalism Pack exige separação entre fato, alegação, análise e opinião, atribuição de informação contestável, verificação de nomes e números e coerência entre manchete e corpo.
+
+Afirmações verificáveis relevantes podem ser registradas em um **Claim Ledger** com fonte, data e nível de confiança.
+
+## TV, rádio e vídeo
+
+O Broadcast Pack escreve para o ouvido: frases pronunciáveis, uma ideia principal por frase, adaptação de números e siglas, estrutura de roteiro e estimativa operacional de duração.
+
+## Acadêmico
+
+O Academic Pack atende monografias, TCCs, dissertações, teses, artigos e projetos de pesquisa como **copiloto de redação e coerência**.
+
+Não deve inventar DOI, referência, participante, entrevista, amostra, dado, resultado ou aprovação ética. O Coherence Gate verifica alinhamento entre pergunta, objetivo, método, resultados, discussão e conclusão.
+
+## Editais
+
+O sistema converte exigências em matriz:
+
+**requisito → evidência → documento comprobatório → resposta → risco**
+
+Um item nunca é marcado como atendido sem evidência.
+
+## Votos, homenagens e cerimônias
+
+O Ceremonial Pack prioriza material humano real. Memórias, sentimentos, falas e acontecimentos não são inventados. O sistema busca especificidade, privacidade, consentimento e promessas plausíveis.
+
+## Editor de Verdade
+
+A última revisão procura:
+
+- frases dispensáveis;
+- clichês e exageros;
+- repetição;
+- sentimentalismo artificial;
+- argumentos fracos;
+- fatos sem fonte;
+- palavras difíceis sem necessidade;
+- conclusões maiores que as evidências;
+- mudança involuntária de voz.
+
+## Evals automáticos
+
+A CI executa:
 
 ```bash
-python scripts/memory_manager.py validate memoria/minha-obra
+python scripts/run_evals.py
+python evals/eval_structural.py
+python -m unittest discover -s editorial-evals -p 'test_*.py' -v
 ```
 
-## 10 domínios de escrita
+Os testes cobrem roteamento e gates para jornalismo, broadcast, acadêmico, edital, cerimonial e voz. Esses evals reduzem falhas previsíveis, mas não provam qualidade literária ou factual por si só.
 
-1. literatura infantil;
-2. livros técnicos;
-3. ficção comercial / best-seller;
-4. esportes;
-5. sentimentos e psicologia narrativa;
-6. fatos e documentário;
-7. cultura pop, música e cinema;
-8. ciência e divulgação científica;
-9. história e biografia;
-10. humor e sátira.
+## Compatibilidade com v2
 
-Cada domínio possui regras próprias de tom, estrutura, validação e continuidade no system prompt v2.
+A v3 preserva:
 
-## Validação factual
+- Memória Criativa Persistente;
+- 10 domínios de escrita;
+- validação factual;
+- sinais de mercado;
+- pipeline de sete especialistas;
+- utilitário de memória;
+- provenance e security gates existentes.
 
-Sempre que um texto tocar o mundo real de forma verificável, o fluxo deve separar:
+## System prompt
 
-**fato confirmado → interpretação → hipótese → decisão criativa**.
-
-Não devem ser inventadas estatísticas, citações de pessoas reais, datas, dados técnicos, placares, recordes, regras oficiais ou fontes bibliográficas.
-
-## Inteligência de mercado
-
-`docs/MARKET_SIGNALS.md` mantém um framework para observar sinais editoriais sem transformar tendências em fórmulas de escrita. Qualquer alegação sobre rankings, vendas, Nielsen/BookScan, PublishNews, NYT ou outras listas deve ser validada e datada antes de uso comercial.
-
-## Como usar o system prompt
-
-O prompt consolidado está em:
+Use:
 
 ```text
-prompts/autor-ventura-v2.md
+prompts/autor-ventura-v3.md
 ```
-
-Ele pode ser usado como base de configuração em sistemas de agentes compatíveis. A persistência real entre sessões depende de o ambiente salvar e recarregar o estado definido em `memory/`.
-
-## Casos de uso
-
-- romances e séries com continuidade longa;
-- livros técnicos e profissionais;
-- literatura infantil;
-- biografias e documentários;
-- conteúdo esportivo;
-- divulgação científica;
-- roteiros e projetos editoriais;
-- produção de long-form com rastreabilidade factual.
 
 ## Princípios
 
-- responsabilidades separadas por especialista;
-- memória explícita, não apenas contexto implícito;
-- continuidade entre capítulos e sessões;
-- revisão antes da entrega;
-- validação de fatos reais;
-- voz adaptada ao gênero e ao público;
-- mercado orienta posicionamento, não substitui originalidade;
-- nenhum agente substitui revisão humana em conteúdo jurídico, médico, financeiro ou regulatório.
+- meio e audiência mudam a escrita;
+- benefício editorial vem antes de ornamentação;
+- fatos reais exigem rastreabilidade compatível com o risco;
+- emoção deve ser proporcional e verdadeira ao material fornecido;
+- respeito não é opcional;
+- nenhuma fonte, memória, citação ou resultado deve ser inventado;
+- revisão humana continua necessária em conteúdo de alto impacto.
 
 ## Status
 
-Biblioteca de prompts, regras, personas e utilitários para workflows editoriais multiagentes. A presença de memória estruturada melhora rastreabilidade, mas não cria persistência automática em qualquer modelo: o sistema hospedeiro precisa armazenar e recarregar o estado.
+Framework editorial multiagente com roteamento executável, prompts, memória e evals estruturais. A qualidade final depende do modelo, das fontes, do contexto fornecido e da revisão aplicada.
 
 ## Licença
 
 MIT — consulte [LICENSE](LICENSE).
-
-## Autor
-
-Wemerson Mota de Oliveira — Ventura Labs AI
-
-[GitHub](https://github.com/venturalabs-ai) · [LinkedIn](https://www.linkedin.com/in/wemerson-mota-de-oliveira-81aa8226/)
