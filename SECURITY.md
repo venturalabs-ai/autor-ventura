@@ -14,7 +14,7 @@ This repository is primarily an **editorial agent pack** (prompts, skills, evals
 
 - Never commit API keys, tokens, private keys, or `.env` files with secrets
 - Never invent sources, DOIs, interviews, or confidence signals in claim ledgers
-- Absolute unsupported claims (`100% seguro`, `zero hallucinations`, etc.) are rejected by CI
+- Marketing-style absolute safety claims are rejected by the repository-safety CI gate
 - Shared security baseline is pinned in `.github/workflows/ventura-standard.yml`
 
 ## Response
