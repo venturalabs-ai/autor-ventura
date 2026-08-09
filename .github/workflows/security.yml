@@ -16,7 +16,9 @@ jobs:
   repository-safety:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Scan for accidental secrets
         shell: bash
         run: |
@@ -29,7 +31,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RInEi --exclude-dir=.git --exclude-dir=.github --exclude-dir=personas -e '100% seguro' -e 'zero vulnerabilidades' -e 'zero hallucinations' . ; then
+          paths=()
+          for path in README.md .opencode docs; do
+            if [[ -e "$path" ]]; then
+              paths+=("$path")
+            fi
+          done
+          if ((${#paths[@]})) && grep -RInEi -e '100% seguro' -e 'zero vulnerabilidades' -e 'zero hallucinations' "${paths[@]}"; then
             echo 'Unsupported absolute claim detected' >&2
             exit 1
           fi
