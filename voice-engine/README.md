@@ -12,6 +12,8 @@ Camada responsável por tornar a escrita natural, respeitosa, específica e coer
 
 ## Voice Memory
 
+Estrutura prevista para memória de voz por obra (ainda não materializada como arquivos neste repositório):
+
 ```text
 voice_memory/
 ├── author_profile.json
@@ -24,6 +26,8 @@ voice_memory/
 ├── rhythm.json
 └── revision_history.json
 ```
+
+Quando ativada em um projeto, a memória de voz segue as mesmas regras de atualização e conflito da memória criativa (`memory/MEMORY_SCHEMA.md`): aprende apenas de exemplos aprovados e revisões explícitas, e nunca infere biografia, crenças ou experiências privadas a partir do estilo.
 
 ## Heurísticas de humanização
 

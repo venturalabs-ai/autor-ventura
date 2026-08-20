@@ -5,7 +5,7 @@ description: Update Autor Ventura voice memory from approved author samples pref
 
 # Voice memory
 
-- Inspect `voice_memory/` conventions and `voice-engine/` before storing or applying preferences.
+- Inspect the `voice_memory/` structure documented in `voice-engine/README.md` and the `voice-engine/` conventions before storing or applying preferences.
 - Learn only from approved samples explicit preferences and revision history.
 - Separate author voice from audience-specific formality and publication-pack rules.
 - Record preferred vocabulary avoid-list rhythm and formality only when evidence supports them.

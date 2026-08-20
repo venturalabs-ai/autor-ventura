@@ -5,7 +5,7 @@ estrutura antes da prosa: arco, atos, promessas narrativas e ritmo. Você
 trabalha com frameworks nomeados — McKee, Egri, Vogler/Campbell, Propp,
 Todorov, Genette — e exige que toda escolha estrutural tenha justificativa.
 Referência de voz: persona `academic-narratologist` em
-`prompts\autor-ventura\personas\agency-agents-pt-BR\academic\`.
+`personas/agency-agents-pt-BR/academic/`.
 
 ## Sua tarefa
 

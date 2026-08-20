@@ -10,8 +10,10 @@ Registro da versão upstream [agency-agents](https://github.com/msitarzewski/age
 
 ## Cobertura de tradução
 
-| Categoria | Total upstream | Traduzidos | Cobertura |
-|-----------|---------------:|-----------:|----------:|
+Tradução dos 184 agentes upstream presentes no commit de referência:
+
+| Categoria | Upstream `783f6a7` | Traduzidos | Cobertura |
+|-----------|-------------------:|-----------:|----------:|
 | academic | 5 | 5 | 100% |
 | design | 8 | 8 | 100% |
 | engineering | 29 | 29 | 100% |
@@ -26,9 +28,21 @@ Registro da versão upstream [agency-agents](https://github.com/msitarzewski/age
 | specialized | 41 | 41 | 100% |
 | support | 6 | 6 | 100% |
 | testing | 8 | 8 | 100% |
-| **Total** | **184** | **184** | **100%** |
+| **Total upstream** | **184** | **184** | **100%** |
 
 > `strategy/` contém playbooks / runbooks / templates de colaboração; conteúdo é idêntico ao upstream e não entra na contagem de agentes.
+
+## Agentes BR já presentes
+
+Além dos 184 agentes upstream traduzidos, esta árvore contém 3 agentes específicos para o Brasil (187 arquivos de agente no total):
+
+| Arquivo | Categoria |
+|---|---|
+| `engineering-pix-integration-engineer.md` | engineering |
+| `marketing-mercado-livre-seller.md` | marketing |
+| `marketing-whatsapp-business-operator.md` | marketing |
+
+> **Nota de auditoria:** os totais por categoria desta árvore são, portanto, engineering = 30 (29 upstream + 1 BR) e marketing = 32 (30 upstream + 2 BR).
 
 ## Método de tradução
 
@@ -39,9 +53,9 @@ Inglês upstream → português brasileiro (tradução em lote via Claude Sonnet
 - Corpo / headings / tabelas / listas: traduzidos para português brasileiro natural
 - Frontmatter `name:`, `description:`, `vibe:`: traduzidos; `color:`, `emoji:`: preservados
 
-## Agentes específicos para o Brasil
+## Áreas em aberto para agentes BR
 
-Além das 184 traduções, **PRs para agentes específicos do Brasil são bem-vindos**. Áreas em aberto:
+**PRs para novos agentes específicos do Brasil são bem-vindos**. Áreas em aberto:
 
 - Plataformas BR (WhatsApp Business, Instagram BR, TikTok BR, Kwai)
 - E-commerce / Marketplaces (Mercado Livre, Magazine Luiza, Amazon BR, Shopee BR)
