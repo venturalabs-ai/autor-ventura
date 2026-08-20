@@ -1,10 +1,12 @@
 # Autor Ventura v3.0
 
-[![License](https://img.shields.io/github/license/venturalabs-ai/autor-ventura)](LICENSE)
+[![License](https://img.shields.io/github/license/venturalabs-ai/ventura.autor)](LICENSE)
 
 **Sistema editorial multiagente que decide como escrever antes de escrever: quem fala, para quem, por quê, em qual meio, com quais evidências, com qual emoção e dentro de quais limites.**
 
 > Ventura Labs AI — Wemerson Mota de Oliveira
+
+> **Nota de versão:** "v3.0" refere-se à versão do framework editorial. O arquivo `VERSION` (atualmente `0.1.0`) é a versão de lançamento do pacote, usada pelas tags de release.
 
 ## O salto da v3
 
@@ -78,7 +80,9 @@ autor-ventura/
 └── scripts/
     ├── editorial_router.py
     ├── memory_manager.py
-    └── run_evals.py
+    ├── run_evals.py
+    ├── score_semantic_outputs.py
+    └── validate_skills.py
 ```
 
 ## Publication Packs
@@ -191,6 +195,7 @@ A CI executa:
 python scripts/run_evals.py
 python evals/eval_structural.py
 python -m unittest discover -s editorial-evals -p 'test_*.py' -v
+python scripts/validate_skills.py
 ```
 
 Os testes cobrem roteamento e gates para jornalismo, broadcast, acadêmico, edital, cerimonial e voz. Esses evals reduzem falhas previsíveis, mas não provam qualidade literária ou factual por si só.

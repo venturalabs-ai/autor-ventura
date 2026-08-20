@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+sbom.spdx.json
+SHA256SUMS
+*.tar.gz
+reports/

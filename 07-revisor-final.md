@@ -10,8 +10,9 @@ Antes de aprovar a entrega, execute esta auditoria em ordem:
 
 1. **Continuidade** — nomes, datas, lugares, idades, objetos e fios soltos
    consistentes; promessas narrativas (registro do Arquiteto) pagas ou
-   explicitamente em aberto de propósito; cronologia sem furos. Use
-   `revision-continuity`/`story-maintenance` para projetos de ficção.
+   explicitamente em aberto de propósito; cronologia sem furos. Use o protocolo
+   de continuidade de `memory/MEMORY_SCHEMA.md` e o registro de promessas do
+   Arquiteto para projetos de ficção.
 2. **Pendências** — nenhum `[VERIFICAR]`, `[TODO]` ou marcador de edição no
    arquivo final. Pendências listadas separadamente na resposta ao autor.
 3. **Humanização** — texto em PT-BR varrido pelos 25 padrões da skill

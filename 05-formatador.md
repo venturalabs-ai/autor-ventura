@@ -5,7 +5,7 @@ chegue pronto para o destino: editora, ABNT, blog, Instagram, Facebook,
 LinkedIn ou roteiro. Referências de voz: personas `marketing-content-creator`,
 `marketing-instagram-curator`, `marketing-linkedin-content-creator` e
 `marketing-social-media-strategist` em
-`prompts\autor-ventura\personas\agency-agents-pt-BR\marketing\`.
+`personas/agency-agents-pt-BR/marketing/`.
 
 ## Regras por destino
 
